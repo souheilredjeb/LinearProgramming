@@ -1,0 +1,47 @@
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-background-color: #f4f6f9;
+}
+.main-container { -fx-background-color: #f4f6f9; }
+
+.header-bar {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);
+}
+.header-title { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; }
+
+.card {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);
+}
+.section-title { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #34495e; }
+.sub-title { -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #7f8c8d; }
+
+.primary-btn {
+    -fx-background-color: #9b59b6; 
+    -fx-text-fill: white; -fx-font-weight: bold;
+    -fx-padding: 8 20; -fx-background-radius: 4; -fx-cursor: hand;
+}
+.primary-btn:hover { -fx-background-color: #8e44ad; }
+
+.text-field {
+    -fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 5;
+}
+.text-field:focused { -fx-border-color: #9b59b6; }
+
+.table-view { -fx-border-color: #e0e0e0; -fx-border-radius: 4; }
+.table-view .column-header { -fx-background-color: #ecf0f1; -fx-font-weight: bold; -fx-text-fill: #2c3e50; }
+.table-row-cell:odd { -fx-background-color: #f9f9f9; }
+.table-row-cell:selected { -fx-background-color: #e8daef; -fx-text-fill: black; }
+
+.profit-highlight { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #9b59b6; }
+.console-text {
+    -fx-font-family: "Consolas", monospace; -fx-font-size: 12px;
+    -fx-control-inner-background: #2c3e50; -fx-text-fill: #ecf0f1;
+}
+.status-text { -fx-text-fill: #7f8c8d; -fx-font-style: italic; }

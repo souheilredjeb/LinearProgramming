@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.linsolve.illustrated.callcenter.CallCenterController"
+      spacing="15" prefWidth="1200" prefHeight="800" styleClass="main-container">
+    
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+    
+    <HBox spacing="15" alignment="CENTER_LEFT" styleClass="header-bar">
+        <Label text="Call Center Staffing Optimization" styleClass="header-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="solveButton" text="Compute Staffing" onAction="#handleSolve" styleClass="primary-btn"/>
+    </HBox>
+    
+    <SplitPane dividerPositions="0.35" VBox.vgrow="ALWAYS">
+        <!-- Left: Parameters -->
+        <VBox spacing="15" styleClass="card">
+            <Label text="Call Volume Forecast" styleClass="section-title"/>
+            
+            <TitledPane text="Calls per Shift (2-hour blocks)" expanded="true">
+                <GridPane fx:id="shiftGrid" hgap="10" vgap="10"/>
+            </TitledPane>
+            
+            <TitledPane text="Global Settings" expanded="true">
+                <GridPane fx:id="settingsGrid" hgap="10" vgap="10"/>
+            </TitledPane>
+            
+            <Region VBox.vgrow="ALWAYS"/>
+            <ProgressBar fx:id="progressBar" prefWidth="10000.0" progress="0"/>
+            <Label fx:id="statusLabel" text="Ready." styleClass="status-text"/>
+        </VBox>
+        
+        <!-- Right: Results -->
+        <VBox spacing="15" styleClass="card">
+            <Label text="Staffing Schedule" styleClass="section-title"/>
+            
+            <TableView fx:id="resultsTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="shiftColumn" text="Shift" prefWidth="200"/>
+                    <TableColumn fx:id="englishColumn" text="English Operators" prefWidth="150"/>
+                    <TableColumn fx:id="spanishColumn" text="Spanish Operators" prefWidth="150"/>
+                </columns>
+            </TableView>
+            
+            <HBox spacing="30" alignment="CENTER_LEFT">
+                <VBox>
+                    <Label text="Total Operators:" styleClass="sub-title"/>
+                    <Label fx:id="totalOpsLabel" text="0" styleClass="profit-highlight"/>
+                </VBox>
+                <VBox>
+                    <Label text="Total Daily Cost:" styleClass="sub-title"/>
+                    <Label fx:id="totalCostLabel" text="" styleClass="profit-highlight"/>
+                </VBox>
+            </HBox>
+            
+            <TextArea fx:id="detailsArea" prefHeight="80" editable="false" styleClass="console-text"/>
+        </VBox>
+    </SplitPane>
+</VBox>
